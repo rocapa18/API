@@ -48,6 +48,7 @@ class Productos_Ctrl {
 
                $msg ="Producto Encontrado";
                $item = $this->M_Producto->cast();
+               $item['precio'] = round($item['precio']);
 
           } else{
 
@@ -187,46 +188,35 @@ class Productos_Ctrl {
           $producto_id = $f3->get('PARAMS.producto_id');
           $this->M_Producto->load(['id_producto = ?', $producto_id ]);
           $msg = "";
+          $info = array();
           if($this->M_Producto->loaded() > 0) {
                $_producto = new M_Productos();
                $_producto->load(['codigo = ? AND id_producto <> ?', $f3->get('POST.codigo'), $producto_id]);
                if ($_producto->loaded() > 0) {
-
-
-
                     $msg ="El registro no se pudo modificar, el codigo esta siendo usado por otro producto";
-
-
-
-
+                    $info['id_producto'] = 0;
                } else {
-
-                    $this->M_Producto-> set('codigo', $f3->get('POST.codigo'));
                     $this->M_Producto-> set('nombre', $f3->get('POST.nombre'));
+                    $this->M_Producto-> set('categoria', $f3->get('POST.categoria'));
+                    $this->M_Producto-> set('codigo', $f3->get('POST.codigo'));
+                    $this->M_Producto-> set('stock', $f3->get('POST.stock'));
                     $this->M_Producto-> set('unidad', $f3->get('POST.unidad'));
                     $this->M_Producto-> set('precio', $f3->get('POST.precio'));
                     $this->M_Producto-> set('imagen', $f3->get('POST.imagen'));
-
-
+                    $this->M_Producto-> set('descripcion', $f3->get('POST.descripcion'));
+                    $this->M_Producto-> set('color', $f3->get('POST.color'));
                     $this->M_Producto->save();
-
                     $msg ="Producto Actualizado";
+                    $info['id_producto'] = $this->M_Producto->get('id_producto');
+
                }
-
-               
-
           } else{
-
                $msg = "El producto no existe";
-
+               $info['id_producto'] = 0;
           }
-
           echo json_encode([
                'mensaje' => $msg,
-               'info' => []
-
+               'info' => $info
           ]);
      }
-
-
 }
