@@ -1,4 +1,8 @@
 <?php
+header('Content-type: application/json; charset=utf-8');
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
 
 class Usuarios_Ctrl {
 
@@ -122,32 +126,21 @@ class Usuarios_Ctrl {
                $_usuario = new M_Usuarios();
                $_usuario->load(['email = ? AND id_usuario <> ?', $f3->get('POST.email'), $usuario_id]);
                if ($_usuario->loaded() > 0) {
-
-
-
                     $msg ="El Usuario no se pudo modificar, el correo esta siendo usado por otro usuario";
-
-
-
-
+                    $info['id_usuario'] = 0;
                } else {
 
                     $this->M_Usuario-> set('nombre', $f3->get('POST.nombre'));
                     $this->M_Usuario-> set('telefono', $f3->get('POST.telefono'));
                     $this->M_Usuario-> set('direccion', $f3->get('POST.direccion'));
                     $this->M_Usuario-> set('email', $f3->get('POST.email'));
-
-
                     $this->M_Usuario->save();
-
                     $msg ="Usuario Actualizado";
+                    $info['id_usuario'] = $this->M_Usuario->get('id_usuario');
                }
-
-               
-
           } else{
-
                $msg = "El usuario no existe";
+               $info['id_usuario'] = 0;
 
           }
 
