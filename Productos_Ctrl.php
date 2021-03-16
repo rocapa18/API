@@ -63,7 +63,7 @@ class Productos_Ctrl {
                $msg ="Producto Encontrado";
                $item = $this->M_Producto->cast();
                $item['precio'] = round($item['precio']);
-               $item['imagen'] = !empty($item['imagen']) ? 'http://farinata.proyectosrocapa.com/API/' . $item['imagen'] : 'http://via.placeholder.com/300x300';
+               $item['imagen'] = !empty($item['imagen']) ? 'http://farinata.rocapa-proyectos.online/API/' . $item['imagen'] : 'http://via.placeholder.com/300x300';
 
           } else{
 
@@ -86,7 +86,7 @@ class Productos_Ctrl {
           $items = array();
          foreach($result as $producto) {
               $item = $producto->cast();
-              $item['imagen'] = !empty($item['imagen']) ? 'http://farinata.proyectosrocapa.com/API/' . $item['imagen'] : 'http://via.placeholder.com/300x300';
+              $item['imagen'] = !empty($item['imagen']) ? 'http://farinata.rocapa-proyectos.online/API/' . $item['imagen'] : 'http://via.placeholder.com/300x300';
               $items[] = $item;
          }
          echo json_encode([
@@ -104,7 +104,7 @@ class Productos_Ctrl {
           $items = array();
          foreach($result as $producto) {
                $item = $producto->cast();
-               $item['imagen'] = !empty($item['imagen']) ? 'http://farinata.proyectosrocapa.com/API/' . $item['imagen'] : 'http://via.placeholder.com/300x300';
+               $item['imagen'] = !empty($item['imagen']) ? 'http://farinata.rocapa-proyectos.online/API/' . $item['imagen'] : 'http://via.placeholder.com/300x300';
                $items[] = $item;
          }
          echo json_encode([
@@ -122,7 +122,7 @@ class Productos_Ctrl {
           $items = array();
          foreach($result as $producto) {
                $item = $producto->cast();
-               $item['imagen'] = !empty($item['imagen']) ? 'http://farinata.proyectosrocapa.com/API/' . $item['imagen'] : 'http://via.placeholder.com/300x300';
+               $item['imagen'] = !empty($item['imagen']) ? 'http://farinata.rocapa-proyectos.online/API/' . $item['imagen'] : 'http://via.placeholder.com/300x300';
                $items[] = $item;
          }
          echo json_encode([
@@ -140,7 +140,7 @@ class Productos_Ctrl {
           $items = array();
          foreach($result as $producto) {
                $item = $producto->cast();
-               $item['imagen'] = !empty($item['imagen']) ? 'http://farinata.proyectosrocapa.com/API/' . $item['imagen'] : 'http://via.placeholder.com/300x300';
+               $item['imagen'] = !empty($item['imagen']) ? 'http://farinata.rocapa-proyectos.online/API/' . $item['imagen'] : 'http://via.placeholder.com/300x300';
                $items[] = $item;
          }
          echo json_encode([
@@ -158,7 +158,7 @@ class Productos_Ctrl {
           $items = array();
          foreach($result as $producto) {
                $item = $producto->cast();
-               $item['imagen'] = !empty($item['imagen']) ? 'http://farinata.proyectosrocapa.com/API/' . $item['imagen'] : 'http://via.placeholder.com/300x300';
+               $item['imagen'] = !empty($item['imagen']) ? 'http://farinata.rocapa-proyectos.online/API/' . $item['imagen'] : 'http://via.placeholder.com/300x300';
                $items[] = $item;
          }
          echo json_encode([
@@ -176,7 +176,7 @@ class Productos_Ctrl {
           $items = array();
          foreach($result as $producto) {
                $item = $producto->cast();
-               $item['imagen'] = !empty($item['imagen']) ? 'http://farinata.proyectosrocapa.com/API/' . $item['imagen'] : 'http://via.placeholder.com/300x300';
+               $item['imagen'] = !empty($item['imagen']) ? 'http://farinata.rocapa-proyectos.online/API/' . $item['imagen'] : 'http://via.placeholder.com/300x300';
                $items[] = $item;
          }
          echo json_encode([

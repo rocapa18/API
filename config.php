@@ -1,8 +1,8 @@
 <?php
-define('DB_NAME', 'dbicpakpbkyzgi');
-define('DB_USER', 'um3yj9k6mfcyn');
-define('DB_PASSWORD', 'rcpt4937');
-define('DB_HOST', '35.209.67.183');
+define('DB_NAME', 'u884963449_farinata');
+define('DB_USER', 'u884963449_roberto');
+define('DB_PASSWORD', 'Rcpt4937');
+define('DB_HOST', 'localhost');
 
 $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
